@@ -4,7 +4,7 @@ class Favorites extends React.Component {
     render() {
         return (
             <div>
-                <h1>Favorites</h1>
+                <h1 className='text-center'>Favorites</h1>
             </div>
         )
     }
