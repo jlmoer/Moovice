@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './Card';
 
 class Popular extends React.Component {
     constructor() {
@@ -13,6 +14,7 @@ class Popular extends React.Component {
             .then((res) => res.json())
             .then((res) => {
                 this.setState({ movies: res.results })
+                console.log(res.results);
             });
     }
 
@@ -20,6 +22,12 @@ class Popular extends React.Component {
         return (
             <div>
                 <h1>Popular</h1>
+                <div className='d-flex flex-wrap justify-content-around'>
+                    {this.state.movies.map((data) => (
+
+                        <Card movie={data} />
+                    ))}
+                </div>
             </div>
         )
     }
